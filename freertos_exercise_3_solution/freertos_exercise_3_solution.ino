@@ -71,7 +71,7 @@ static void vReceiverTask( void *pvParameters )
      xStatus = xQueueReceive( xQueue, &lReceivedValue, xTicksToWait );
      if( xStatus == pdPASS )
      {
-       SERIAL_PORT.println(String(lReceivedValue) +"At this time: "+String(millis()) );
+       SERIAL_PORT.println(String(lReceivedValue) +" At this time: "+String(millis()/1000) );
        if(lReceivedValue ==100) {
           digitalWrite(LED_BUILTIN, HIGH);
        } else {
